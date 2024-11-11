@@ -9,7 +9,6 @@ export default {
       colors: {
         "brand-black": "#0B0B0B",
         "brand-purple": "#9538E2",
-        "brand-gray": "#09080F",
       },
     },
   },
