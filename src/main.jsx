@@ -3,14 +3,19 @@ import * as ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 
+import RootLayout from "./layouts/root-layout";
+import Home from "./pages/home";
+
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <div className="text-3xl text-center py-10 text-red-500">
-        Hello world!
-      </div>
-    ),
+    element: <RootLayout />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+    ],
   },
 ]);
 
