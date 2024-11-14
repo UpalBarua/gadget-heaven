@@ -1,5 +1,5 @@
 import { ShoppingCart, Heart } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const navLinks = [
   {
@@ -17,8 +17,14 @@ const navLinks = [
 ];
 
 export default function Navbar() {
+  const location = useLocation();
+
   return (
-    <header className="bg-brand-purple py-5 text-white container mx-auto px-8 rounded-t-3xl mt-6 flex items-center justify-between">
+    <header
+      className={`py-5 container mx-auto px-8 rounded-t-3xl flex items-center justify-between ${
+        location.pathname === "/" ? "bg-brand-purple text-white mt-6" : ""
+      }`}
+    >
       <Link className="font-bold text-xl tracking-tight" to="/">
         Gadget Heaven
       </Link>
